@@ -1,0 +1,28 @@
+LAPORAN
+TUGAS BESAR SISTEM TERDISTRIBUSI
+GAME PING-PONG
+
+![alt text]()
+
+
+OLEH :
+
+Made Raharja Surya Mahadi	1301160039
+M. Restu Assegaf	1301164198
+Johan Antonius Salim	1301164150
+Dedih Kurnia	1301164077
+
+
+DOSEN:
+Aulia Arif Wardana S.Kom., M.T.
+
+
+
+
+
+FAKULTAS TEKNIK INFORMATIKA
+UNIVERSITAS TELKOM
+2019
+
+
+
