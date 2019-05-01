@@ -56,11 +56,26 @@ Perangakat lunak(software) yang digunakan dalam pembuatan game The PingPong Mast
 ###### c.	Player yang lebih dulu masuk ke dalam game akan mendapati pop up yang menanyakan apakah dia player 1 atau bukan (jika menekan “ok” akan menjadi player 1, jika menekan “cancel” maka player tersebut tidak bermain.
 ###### d.	Player yang menekan “ok” pada pop up akan menjadi player 1, sedangkan player yang menekan “cancel” setelah player lain menekan “ok” akan menjadi player 2.
 #
-#### 5.	DOKUMENTASI
-#### a. Pertama-tama aktifkan server
-![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/2.PNG)
+#### 5.	DOKUMENTASI & SIMULASI
+#### a. Pertama-tama sebelum membuka program kita harus mengaktifkan server cara menjalankannya yaitu buka cmd/linux kemudian ketik python server.py kemudian RUN
+![alt text]()
 #
 #
-#### b. Berikut penjelasan rincian konten yang ada dalam game :
-![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/FIX.png)
-
+#### b. Setelah di run dan tidak terjadi error kemudian masuk ke folder ping-pong-game-master->client kemudian cari file client.html kemudian buka
+![alt text]()
+#### c. Setelah terbuka pilih jenis player yang di inginkan apakah akan jadi Player 1 atau Player 2
+![alt text]()
+#
+#
+#### d. jika telah terbuka tampilan seperti di bawah maka ulangi langkah B & C.
+![alt text]()
+#
+#
+#### e. Jika client 1 dan client 2 telah terhubung kemudian tekan "SPASI" untuk menampilkan bola dan memulai permainan, kemudian tekan pada keyboard huruf "A" untuk memindahkan bat/mallet ke atas. kemudian tekan huruf "D" untuk memindahkan bat/mallet ke bawah.
+![alt text]()
+#
+#
+#### f. Jika kita melihat di sisi server, server akan menerima data dari player 1 dan 2.
+![alt text]()
+#
+#
