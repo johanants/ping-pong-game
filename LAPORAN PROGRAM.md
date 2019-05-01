@@ -69,8 +69,9 @@ Perangakat lunak(software) yang digunakan dalam pembuatan game The PingPong Mast
 ![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/C.png)
 #
 #
-#### d. jika telah terbuka tampilan seperti di bawah maka ulangi langkah B & C dan pilihlah jenis player yang berbeda.
+#### d. jika telah terbuka tampilan seperti di bawah :
 ![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/D.PNG)
+####  maka ulangi langkah B & C dan pilihlah jenis player yang berbeda.
 ![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/E.png)
 #
 #
