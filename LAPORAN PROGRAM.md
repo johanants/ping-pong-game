@@ -57,7 +57,7 @@ Perangakat lunak(software) yang digunakan dalam pembuatan game The PingPong Mast
 ###### d.	Player yang menekan “ok” pada pop up akan menjadi player 1, sedangkan player yang menekan “cancel” setelah player lain menekan “ok” akan menjadi player 2.
 #
 #### 5.	DOKUMENTASI & SIMULASI
-#### a. Pertama-tama sebelum membuka program kita harus mengaktifkan server cara menjalankannya yaitu buka cmd/linux kemudian ketik python server.py kemudian RUN.
+#### a. Pertama-tama sebelum membuka program kita harus mengaktifkan server cara menjalankannya yaitu buka cmd/terminal linux kemudian ketik python3 server.py kemudian RUN.
 ![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/A.png)
 #
 #
