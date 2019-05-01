@@ -11,11 +11,12 @@ function setup(){
     frameRate(30);
     player1 = new Player(true);
     player2 = new Player(false);
-    if(confirm('Are you player 1?')){
-        playerType = 1;
-    } else {
-        playerType = 2;
+    playerType = getParameterByName('player');
+    if(!playerType){
+        alert('Select your player type first');
+        window.location ='index.html';
     }
+    
     init();
 }
 
@@ -205,5 +206,15 @@ function onSubmit() {
     
 function onCloseClick() {
     ws.close();
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
     
