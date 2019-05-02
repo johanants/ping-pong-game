@@ -153,7 +153,9 @@ function Player(first){
 function init() {
 
     // Connect to Web Socket
-    ws = new WebSocket("ws://localhost:9001/");
+    let host = getParameterByName('host');
+    let port = getParameterByName('port');
+    ws = new WebSocket("ws://"+host+":"+port+"/");
 
     // Set event handlers.
     ws.onopen = function() {
