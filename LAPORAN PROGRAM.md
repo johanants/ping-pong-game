@@ -83,3 +83,21 @@ Perangakat lunak(software) yang digunakan dalam pembuatan game The PingPong Mast
 ![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/2.PNG)
 #
 #
+
+#### Wiki
+#### a. Server
+Server pada game ini berfungsi untuk menghubungkan antar player yang akan bermain.
+cara mengganti host menggunakan kode :
+```
+server = WebsocketServer(PORT, host='127.0.0.1')
+```
+pada bagian diatas akan menggunakan host pada IP ```127.0.0.1```. Untuk mengganti portnya, anda bisa rubah bagian 
+```
+PORT = 9001
+```
+pada bagian diatas akan menggunakan PORT 9001.
+#
+#
+#### b. Client
+Player 1 berfungsi untuk mengirim data berupa posisi Bat/Mallet dan bola.
+Sedangkan pada Player 2 berfungsi untuk mengirim data berupa posisi Bat/Mallet saja. 
