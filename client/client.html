@@ -1,10 +1,48 @@
 <html>
 <head>
-    <title>Simple client</title>
+    <title>PONG Game</title>
     <script type="text/javascript" src="p5/p5.js"></script>
     <script type="text/javascript" src="client.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="assets/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap4.min.css">
 </head>
 <body>
-  
+    <div class="container">
+        <h4>PONG GAME</h4>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6" >
+                <button class="btn btn-warning btn-score">
+                    <h4 id="p1">Player One (Not Connected)</h4>
+                    <h2 id="score1">0</h2>
+                </button>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <button class="btn btn-danger btn-score">
+                    <h4 id="p2">Player Two (Not Connected)</h4>
+                    <h2 id="score2">0</h2>
+                </button>
+            </div>
+        </div>
+        <div id="container" style="margin-top: 25px"></div>
+        
+        <h4>Tutorial</h4>
+        <ol>
+            <li>Press space to generate ball (only on player one side)</li>
+            <li>Press A to up, D to down</li>
+        </ol>
+    </div>
+    
 </body>
+<style>
+    .btn-score{
+        /* margin-left: 150px; */
+        width: 100%;
+    }
+</style>
 </html>
