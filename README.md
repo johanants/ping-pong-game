@@ -84,8 +84,10 @@ Perangakat lunak(software) yang digunakan dalam pembuatan game The PingPong Mast
 #
 #
 #### 6.	Fitur-Fitur yang Ditambahkan
-###### a.	Join Room
+###### a.	Join Room pada server dan Client
 Menambahkan fitur untuk masuk ke room yang telah disediakan di room list.
+###### b.   Spectactor pada Server dan Client
+Menambahkan fitur bagi penonton untuk melihat pertadingan di room tertentu.
 #
 #
 #### Wiki
