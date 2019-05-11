@@ -21,6 +21,8 @@ class Room:
 	def toDict(self):
 		data = {'id': self.roomId, 'player_one': self.playerOne != None, 'player_two': self.playerTwo != None}
 		return data
+	
+
 
 def getRoomList():
 	data = []
@@ -48,6 +50,20 @@ def Join(player, room, playerType):
 		else:
 			return False
 	return False
+
+def AddSpectactor(room_id, client):
+	for i, spec in enumerate(spectactor):
+		if(str(spec['room_id']) == room_id):
+			spectactor[i]['spectactor'].append(client)
+
+def BroadcastToSpectactor(room_id, msg, server):
+	for spec in spectactor:
+		if(str(spec['room_id']) == room_id):
+			for client in spec['spectactor']:
+				if(client in server.clients):
+					server.send_message(client, json.dumps(msg))
+
+
 
 # Called for every client connecting (after handshake)
 def new_client(client, server):
@@ -103,12 +119,26 @@ def message_received(client, server, message):
 		else:
 			msg = {'status': False, 'command':'player_two_join', 'message': 'Room full or wrong room id'}
 		server.send_message(client, json.dumps(msg))
+	elif(data['command'] == 'player_one_position'):
+		room = getRoom(data['data']['room_id'])
+		msg = {'status': True, 'command': 'player_one_position', 'data': {'position': data['data']['position']}}
+		if(room.playerTwo != None):
+			server.send_message(room.playerTwo, json.dumps(msg))
+		BroadcastToSpectactor(data['data']['room_id'], msg, server)
 	elif(data['command'] == 'player_two_position'):
 		room = getRoom(data['data']['room_id'])
 		msg = {'status': True, 'command': 'player_two_position', 'data': {'position': data['data']['position']}}
+		if(room.playerOne != None):
+			server.send_message(room.playerOne, json.dumps(msg))
+		BroadcastToSpectactor(data['data']['room_id'], msg, server)
 	elif(data['command'] == 'ball_position'):
 		room = getRoom(data['data']['room_id'])
 		msg = {'status': True, 'command': 'ball_position', 'data': {'position': data['data']['position'], 'angle': data['data']['angle']}}
+		if(room.playerTwo != None):
+			server.send_message(room.playerTwo, json.dumps(msg))
+		BroadcastToSpectactor(data['data']['room_id'], msg, server)
+	elif(data['command'] == 'spectactor_join'):
+		AddSpectactor(data['data']['room_id'], client)
 	elif(data['command'] == 'get_setting'):
 		server.send_message(client, json.dumps(setting))
 	elif(data['command'] == 'add_player_one_score'):
@@ -127,6 +157,12 @@ def message_received(client, server, message):
 	# print("Client(%d) said: %s" % (client['id'], message))
 	# server.send_message_to_all(message)
 
+
+
+for i in range(4):
+	r = Room(i)
+	spectactor.append({'room_id': i, 'spectactor': []})
+	rooms.append(r)
 
 print('Starting Server...')
 PORT=9001
