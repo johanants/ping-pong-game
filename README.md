@@ -83,7 +83,11 @@ Perangakat lunak(software) yang digunakan dalam pembuatan game The PingPong Mast
 ![alt text](https://gitlab.com/share424/ping-pong-game/raw/laporan/aset%20photo/2.PNG)
 #
 #
-
+#### 6.	Fitur-Fitur yang Ditambahkan
+###### a.	Join Room
+Menambahkan fitur untuk masuk ke room yang telah disediakan di room list.
+#
+#
 #### Wiki
 #### a. Server
 Server pada game ini berfungsi untuk menghubungkan antar player yang akan bermain.
