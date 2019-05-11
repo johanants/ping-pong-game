@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Room List</title>
+        <link rel="stylesheet" type="text/css" href="assets">
+        <link rel="stylesheet" href="assets/css/all.css">
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="assets/js/dataTables.bootstrap4.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap4.min.css">
+    </head>
+    <body onload="init()">
+        <div class="container">
+            <h4>Here are room list that are avaiable</h4>
+            <p>You can select your room</p>
+            <button class="btn btn-success" onclick="getRoom()">Refresh</button>
+            <table class="table table-dark table-hover">
+                <thead>
+                    <th>No</th>
+                    <th>Room ID</th>
+                    <th>Player One</th>
+                    <th>Player Two</th>
+                    <th>Action</th>
+                </thead>
+                <tbody id="table-data">
+
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script>
+        var ws;
+        
+        
+        function init(){
+            
+            ws = new WebSocket("ws://192.168.1.2:9001/");
+            ws.onopen = function(){
+                console.log('Retrieve room list');
+                getRoom();
+            }
+            ws.onmessage = function(e){
+                console.log(e.data);
+                var message = JSON.parse(e.data);
+                if(message.command == 'get_room_list'){
+                    var i = 1;
+                    $("#table-data").empty();
+                    $.each(message.data, function(k, v) {
+                        $("#table-data").append("<tr><td>" + (i++) + "</td><td>" + v.id + "</td><td>" + (!v.player_one ? '<a target="_blank" href="client.html?player=1&roomId='+v.id+'"><button class="btn btn-warning">Play as player One</button></a>' : 'Connected') + "</td><td>" + (!v.player_two ? '<a target="_blank" href="client.html?player=2&roomId='+v.id+'"><button class="btn btn-danger">Play as player Two</button></a>' : 'Connected') + "</td><td>" + '<a target="_blank" href="client.html?player=0&roomId='+v.id+'"><button class="btn btn-primary">Watch</button></a>' + "</td></tr>" );
+                    });
+                }
+            }
+            ws.onclose = function() {
+                console.log("on close");
+            };
+
+            ws.onerror = function(e) {
+                console.log(e)
+            };
+        }
+
+        function getRoom(){
+            var getRoom = {'command': 'get_room_list'};
+            ws.send(JSON.stringify(getRoom));
+        }
+    </script>
+</html>
