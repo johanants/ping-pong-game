@@ -92,6 +92,7 @@ Menambahkan fitur bagi penonton untuk melihat pertadingan di room tertentu.
 #
 #### Wiki
 #### a. Server
+##### Penjelasan : 
 Server pada game ini berfungsi untuk menghubungkan antar player yang akan bermain.
 cara mengganti host menggunakan kode :
 ```
@@ -105,5 +106,10 @@ pada bagian diatas akan menggunakan PORT 9001.
 #
 #
 #### b. Client
+##### Penjelasan : 
 Player 1 berfungsi untuk mengirim data berupa posisi Bat/Mallet dan bola.
-Sedangkan pada Player 2 berfungsi untuk mengirim data berupa posisi Bat/Mallet saja. 
+Sedangkan pada Player 2 berfungsi untuk mengirim data berupa posisi Bat/Mallet saja.
+#
+##### Cara mengganti IP :
+1. Buka file ```room.html``` pada folder client kemudian cari ```ws = new WebSocket("ws://192.168.1.2:9001/");``` yang harus di ganti adalah pada ```192.168.1.2```.
+2. kemudian ganti juga pada file ```client.js``` pada folder client kemudian cari ```ws = new WebSocket("ws://192.168.1.2:9001/");``` yang harus di ganti adalah pada ```192.168.1.2```.
